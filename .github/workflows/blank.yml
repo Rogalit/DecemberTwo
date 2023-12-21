@@ -19,10 +19,10 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - run: docker build -t ghcr.io/raewda/py-app2 ./python-app/
-      - run: docker push ghcr.io/raewda/py-app2
-      - run: docker build -t ghcr.io/raewda/node-app2 ./node-app/
-      - run: docker push ghcr.io/raewda/node-app2
+      - run: docker build -t ghcr.io/rogalit/november/python-app ./python-app/
+      - run: docker push ghcr.io/rogalit/november/python-app
+      - run: docker build -t ghcr.io/rogalit/november/node-app ./node-app/
+      - run: docker push ghcr.io/rogalit/november/node-app
       - run: ssh -o "StrictHostKeyChecking no" 'rogalit-decembertwo-jtgwgbdhaxm#lhwGc1XXFaveFkHV9IIcNMwgZFoeX59Q@rogalit-decembertwo-jtgwgbdhaxm.ssh.ws-eu107.gitpod.io' "cd ~ && docker compose pull && docker compose up -d"
   
   notify-success: 
